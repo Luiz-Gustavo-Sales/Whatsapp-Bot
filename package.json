@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ../index.js"
+    "start": "nodemon ./service.js",
+    "dev": "nodemon ../src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
     "cors": "^2.8.5",
     "csv-parser": "^3.0.0",
     "express": "^4.17.1",
+    "https": "^1.0.0",
     "mongoose": "^5.11.6",
     "neat-csv": "^6.0.0",
     "node-modules": "^1.0.1",
