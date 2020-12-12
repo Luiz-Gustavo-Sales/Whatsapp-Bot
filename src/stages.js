@@ -43,13 +43,9 @@ var stages = {
     descricao: "Falar com atendente ",
     obj: require("./stages/atendente"),
   },
-  //  8001:{
-  //   descricao:"Menu",
-  //   obj:require("./stages/menu")
-  // },
   8001:{
     descricao:"Encerra sessão",
-    obj:require("./stages/atendente")
+    obj:require("./stages/finalizarSessao")
   },
   8002:{
     descricao:"Voltar",

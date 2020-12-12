@@ -1,7 +1,7 @@
-// IMPORTANDO EXPRESS
+//importando o express (rotas)
 const express = require("express");
-const startt = require("../index")
+//modulo de rotas do express
 const routes = express.Router();
-
-routes.get("/start",startt.start);
+const start = require("../index")
+routes.get("/teste",start.start)
 module.exports = routes;

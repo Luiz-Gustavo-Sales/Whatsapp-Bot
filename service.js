@@ -1,16 +1,21 @@
+
 const express = require("express");
-const port= process.env.PORT || 3000
-// IMPORTANDO ROUTES (rotas  da aplicação)
+const mongoose = require("mongoose");
 const routes = require("./src/routes/routes");
+const cors = require("cors");
+const port = process.env.PORT || 3002;
+//
+const api = express();
 
-// CRIANDO UMA APLICAÇÃO EXPRESS
-const app = express();
+mongoose.connect(
+  "mongodb+srv://bodegamix:bodegamix2020@cluster0-xsmns.mongodb.net/BDVENDAS?retryWrites=true&w=majority",
+  { useNewUrlParser: true, useUnifiedTopology: true,useCreateIndex:true }
+);
 
-// USANDO EM FORMA DE FUNÇÃO MIDDLWARE AS ROTAS IMPORTADAS
-app.use(routes);
+api.use(cors());
 
-//INICIANDO O SERVIDOR NA PORTA SETADA EM app.set('port', '8080')
-//app.set('port', '8080')
-app.listen(port,function(){
-    console.log(`APP RODANDO NA PORTA ${port}`)
-});
+
+api.use(express.json());
+api.use(routes);
+
+api.listen(port);

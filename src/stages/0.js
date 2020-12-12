@@ -11,7 +11,7 @@ function execute(user, msg, contato) {
   banco.db[user].stage = 1;
   
   return [
-    `Olá sou um assistente virtual, irei apresentar as opções: `,
+    `Olá me chamo B-19 *assistente virtual do Bodegamix*, irei apresentar as opções: `,
     menu,
   ];
 }

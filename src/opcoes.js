@@ -28,17 +28,25 @@ const cardapio = {
     // preco: 12.99,
   },
   8: {
-    descricao: "Como fazer o login no site do bodegamix.",
-    // preco: 12.99,
-  },
-  9: {
-    descricao: "Não consigo fazer o login no site bodegamix.",
-    // preco: 12.99,
-  },
-  10: {
-    descricao: "Outros assuntos.",
-    // preco: 12.99,
-  }
+      descricao: "Estou com dificuldade em fazer o login no site do bodegamix.",
+      // preco: 12.99,
+    },
+    9: {
+      descricao: "Falar com atendente",
+      // preco: 12.99,
+    },
+  // 8: {
+  //   descricao: "Como fazer o login no site do bodegamix.",
+  //   // preco: 12.99,
+  // },
+  // 9: {
+  //   descricao: "Não consigo fazer o login no site Bodegamix.",
+  //   // preco: 12.99,
+  // },
+  // 10: {
+  //   descricao: "Falar com atendente.",
+  //   // preco: 12.99,
+  // }
 };
 
 exports.menu = cardapio;
