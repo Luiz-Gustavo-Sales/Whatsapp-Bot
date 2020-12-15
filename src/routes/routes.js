@@ -1,7 +1,7 @@
 //importando o express (rotas)
 const express = require("express");
 const path = require("path")
-const start = require("../index")
+const start = require("../../index")
 
 //modulo de rotas do express
 const routes = express.Router();

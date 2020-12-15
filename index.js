@@ -1,8 +1,8 @@
 // Supports ES6
 // import { create, Whatsapp } from 'sulla';
 const bot = require("venom-bot");
-const banco = require("./banco");
-const stages = require("./stages");
+const banco = require("./src/banco");
+const stages = require("./src/stages");
 const fs = require('fs');
 
 //função exportando o QRCOD PARA
