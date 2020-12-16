@@ -5,6 +5,7 @@ const banco = require("./src/banco");
 const stages = require("./src/stages");
 const fs = require('fs');
 
+function teste(req,res){
 //função exportando o QRCOD PARA
 function exportQR(qrCode,path){
   qrCode = qrCode.replace('data:image/png;base64,', '');
@@ -18,11 +19,31 @@ bot
   .create('sessionBodega',(base64Qr, asciiQR)=>{
     //criando png do QRCODE
     exportQR(base64Qr, 'qrcode.png');
-  })
-  .then((client) => start(client)).catch((erro)=>{console.log("erro")});
+  },    (statusSession, session) => {
+
+    console.log('Status Session: ', statusSession); //return isLogged || notLogged || browserClose || qrReadSuccess || qrReadFail || autocloseCalled || desconnectedMobile || deleteToken
+  //Create session wss return "serverClose" case server for close
+    console.log('Session name: ', session);
+  },
+  {
+    headless: true,
+   // devtools: false,
+    useChrome: false,
+    debug: false,
+   // logQR: false,
+    refreshQR: 15000,
+    autoClose: 60 * 60 * 24 * 365,
+    disableSpins: true
+}
+  )
+  .then((client) => start(client)).catch((erro)=>{console.log("erro",erro)});
 
 function start(client) {
 
+// console.log("CLiente aqui",client)
+if(client==undefined || client==""){
+  console.log("Branco: ")
+}
   client.onMessage((message) => {
 
     // console.log("Verificando aqui variavel message.body: ",message.body);
@@ -61,3 +82,5 @@ function getStage(user) {
     return banco.db[user].stage;
   }
 }
+}
+exports.teste = teste;
