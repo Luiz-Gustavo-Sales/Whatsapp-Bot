@@ -15,6 +15,6 @@ routes.get("/",(req,res)=>{
 
 routes.get("/start",indexStart.startSession,)
 // routes.get("/teste",teste.initSession);
-// routes.get("/login",indexStart.startSession,(req,res)=>res.sendFile('login.html', { root: './src/page/' }))
+routes.get("/login",(req,res)=>res.sendFile('login.html', { root: './src/page/' }))
 // routes.get("/start",start)
 module.exports = routes;
