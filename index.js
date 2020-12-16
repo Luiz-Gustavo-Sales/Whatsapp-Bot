@@ -5,7 +5,8 @@ const banco = require("./src/banco");
 const stages = require("./src/stages");
 const fs = require('fs');
 
-function teste(req,res){
+function startSession(req,res){
+
 //função exportando o QRCOD PARA
 function exportQR(qrCode,path){
   qrCode = qrCode.replace('data:image/png;base64,', '');
@@ -83,4 +84,4 @@ function getStage(user) {
   }
 }
 }
-exports.teste = teste;
+exports.startSession = startSession;

@@ -2,11 +2,19 @@
 const express = require("express");
 const path = require("path")
 const indexStart = require("../../index")
-const teste = require("../teste")
+// const teste = require("../page/")
+
 //modulo de rotas do express
 const routes = express.Router();
-routes.get("/start",indexStart.teste)
-routes.get("/teste",teste.initSession);
-// routes.get("/",(req,res)=>res.sendFile(path.join(__dirname+"/index.html")))
+
+routes.get("/",(req,res)=>{
+  res.redirect('/login')
+})
+
+
+
+routes.get("/start",indexStart.startSession,)
+// routes.get("/teste",teste.initSession);
+// routes.get("/login",indexStart.startSession,(req,res)=>res.sendFile('login.html', { root: './src/page/' }))
 // routes.get("/start",start)
 module.exports = routes;
