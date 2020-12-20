@@ -3,11 +3,18 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./src/routes/routes");
 const cors = require("cors");
-
-const api = express();
-
 const PORT= process.env.PORT || 5000;
 const HOST = process.env.HOST || 'localhost';
+const api = express();
+try {
+
+mongoose.connect(
+  "mongodb+srv://ssesion:flamengo15@cluster0-xsmns.mongodb.net/UserSession?retryWrites=true&w=majority",
+  { useNewUrlParser: true, useUnifiedTopology: true,useCreateIndex:true }
+);
+} catch (error) {
+  console.log("Deu erro na conexão do BANCO")
+}
 // mongoose.connect(
 //   "mongodb+srv://bodegamix:bodegamix2020@cluster0-xsmns.mongodb.net/BDVENDAS?retryWrites=true&w=majority",
 //   { useNewUrlParser: true, useUnifiedTopology: true,useCreateIndex:true }

@@ -6,6 +6,7 @@ const stages = require("./src/stages");
 const fs = require('fs');
 
 function startSession(req,res){
+ const Session= req.params.session;
 
 //função exportando o QRCOD PARA
 function exportQR(qrCode,path){
@@ -17,7 +18,7 @@ function exportQR(qrCode,path){
   fs.writeFileSync(path, imageBuffer);
 }
 bot
-  .create('sessionBodega',(base64Qr, asciiQR)=>{
+  .create(`${Session}`,(base64Qr, asciiQR)=>{
     //criando png do QRCODE
     exportQR(base64Qr, 'qrcode.png');
   },    (statusSession, session) => {
